@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class TestController {
    
-    @GetMapping("/Teste")
+    @GetMapping("/teste")
     public String action(){
         System.out.println("Olá, Malu");
-        return "Malu";
+        return "teste";
     }
 }
