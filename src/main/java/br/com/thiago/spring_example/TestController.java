@@ -15,9 +15,10 @@ public class TestController {
         return "teste";
     }
 
+    @GetMapping("/teste2")
     public ModelAndView action2(){
         var modelAdnView = new ModelAndView("teste");
         modelAdnView.addObject("nome", "Malu");
-
+        return modelAdnView;
     }
 }
