@@ -6,6 +6,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 @Controller
@@ -25,4 +28,18 @@ public class TestController {
 
         return new ModelAndView("teste", Map.of("nome", "Malu"));
     }
+
+    @GetMapping("/teste3")
+    public String action3(){
+        return "form";
+    }
+
+    @PostMapping("/teste3")
+    public String action4(Client client){
+        System.out.println(client);
+
+        return "form";
+    }
+    
+
 }
