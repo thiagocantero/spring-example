@@ -5,6 +5,7 @@ import java.util.Map;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,8 +36,11 @@ public class TestController {
     }
 
     @PostMapping("/teste3")
-    public String action4(Client client){
-        System.out.println(client);
+    public String action4(@ModelAttribute("name") String nome,
+                          @ModelAttribute("age") int idade)  
+    {
+        System.out.println(nome);
+        System.out.println(idade);
 
         return "form";
     }
