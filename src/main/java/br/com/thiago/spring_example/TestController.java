@@ -3,12 +3,11 @@ package br.com.thiago.spring_example;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 
@@ -31,11 +30,12 @@ public class TestController {
     }
 
     /**
+     * @param model 
      * @return
      */
     @GetMapping("/teste3")
-    public String action3(){
-        Model.addAttribute("client", new Client("Thiago", 42));
+    public String action3(ModelMap model2){
+        model2.addAttribute("Client", new Client("Thiago", 42));
         return "form";
     }
 
