@@ -33,6 +33,9 @@ public class SpringExampleApplication implements CommandLineRunner {
 		if (!client2.isPresent()) {
 			System.out.println("Cliente 2 não encontrado");
 		}
+
+		client1.get().setName("Maria Luiza");
+		clientRepository.save(client1.get());
 	}
 
 }
