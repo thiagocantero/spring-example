@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringExampleApplication implements CommandLineRunner {
 
 	
-	private ClientRepository clientRepository;
+	private final ClientRepository clientRepository;
 
 	public SpringExampleApplication(ClientRepository clientRepository) {
 		this.clientRepository = clientRepository;
