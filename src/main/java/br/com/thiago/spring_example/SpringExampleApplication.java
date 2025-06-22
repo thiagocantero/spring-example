@@ -36,6 +36,8 @@ public class SpringExampleApplication implements CommandLineRunner {
 
 		client1.get().setName("Maria Luiza");
 		clientRepository.save(client1.get());
+
+		clientRepository.delete(client1.get());
 	}
 
 }
