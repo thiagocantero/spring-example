@@ -21,8 +21,18 @@ public class SpringExampleApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println(clientRepository);
-		System.out.println("A aplicação iniciou");
+		clientRepository.save(new Client("Malu", 7));
+		var client1 = clientRepository.findById(1L);
+		var client2 = clientRepository.findById(2L);
+
+		
+		if (client1.isPresent()) {
+			System.out.println("Cliente 1: " + client1.get());
+		}
+		
+		if (!client2.isPresent()) {
+			System.out.println("Cliente 2 não encontrado");
+		}
 	}
 
 }
